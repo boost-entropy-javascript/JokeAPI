@@ -1,4 +1,4 @@
-name: boostsecurity.io
+name: boostsecurity.io - snyk
 on:
   workflow_dispatch:
   push:
