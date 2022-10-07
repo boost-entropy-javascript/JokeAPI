@@ -1,0 +1,20 @@
+name: boostsecurity.io
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  boost-native:
+    name: Native Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run Native Scanner
+        uses: boostsecurityio/boostsec-scanner-github@v4
+        with:
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/snyk-scanner
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
