@@ -15,6 +15,6 @@ jobs:
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          registry_module: boostsecurityio/snyk-scanner
+          registry_module: boostsecurityio/snyk
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
